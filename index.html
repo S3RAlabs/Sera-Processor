@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with minimal toolbar -->
+        <header class="toolbar">
+            <div class="toolbar-left">
+                <div class="document-title" id="documentTitle">Untitled Document</div>
+            </div>
+            <div class="toolbar-center">
+                <div class="format-controls">
+                    <button class="format-btn" id="boldBtn" title="Bold (Ctrl+B)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path>
+                            <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path>
+                        </svg>
+                    </button>
+                    <button class="format-btn" id="italicBtn" title="Italic (Ctrl+I)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 4h-9M14 20H5M15 4L9 20"></path>
+                        </svg>
+                    </button>
+                    <button class="format-btn" id="underlineBtn" title="Underline (Ctrl+U)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"></path>
+                            <line x1="4" y1="21" x2="20" y2="21"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="toolbar-right">
+                <div class="word-count" id="wordCount">0 words</div>
+            </div>
+        </header>
+
+        <!-- Main editor area -->
+        <main class="editor-container">
+            <div class="editor-wrapper">
+                <div class="editor" 
+                     id="editor" 
+                     contenteditable="true" 
+                     spellcheck="true"
+                     data-placeholder="Start writing...">
+                </div>
+            </div>
+        </main>
+
+        <!-- Status bar -->
+        <footer class="status-bar">
+            <div class="status-left">
+                <span id="saveStatus">Ready</span>
+            </div>
+            <div class="status-right">
+                <span id="cursorPosition">Line 1, Column 1</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
+
